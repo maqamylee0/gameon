@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -91,52 +92,98 @@ class _Otp1State extends State<Otp1> {
                       padding: EdgeInsets.all(8.0),
                       child: Text("Let's Get Started",style:TextStyle(fontSize: 14,color:Color(0xff7FA89C),fontWeight: FontWeight.w400,decoration: TextDecoration.none),textAlign: TextAlign.center,),
                     ),
-                   const SizedBox(height: 30,),
+                   const SizedBox(
+                     height: 10
+                   ),
                    Container(
                      width: totalWidth,
-                     padding: const EdgeInsets.all(20),
+                     // padding: const EdgeInsets.all(20),
                      child: Column(
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children:  [
-                         Text("Enter Phone Number",style: TextStyle(color: Color(0xff033934),fontFamily: 'Poppins',fontWeight: FontWeight.w500,fontSize: 14,decoration: TextDecoration.none),),
-                         Container(
-
-                           margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
-                           decoration: BoxDecoration(
-                             color: Color.fromRGBO(8, 143, 129, 0.08),
-                               borderRadius: BorderRadius.all( Radius.circular(8)
-
-                               ),
-                             border: Border.all(color: Color(0xff088F81)
-
-                             )
-
-                           ),
-                           child: InternationalPhoneNumberInput(
-
-                              onInputChanged: (PhoneNumber number) {
-                                print(number.phoneNumber);
-                              },
-                              onInputValidated: (bool value) {
-                                print(value);
-                              },
-                              selectorConfig: const SelectorConfig(
-                                selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-                              ),
-                              ignoreBlank: false,
-                              autoValidateMode: AutovalidateMode.disabled,
-                              selectorTextStyle: TextStyle(color: Colors.black),
-                              initialValue: number,
-                              textFieldController: controller,
-                              formatInput: false,
-                              inputBorder: InputBorder.none,
-                              keyboardType:
-                              TextInputType.numberWithOptions(signed: true, decimal: true),
-                              onSaved: (PhoneNumber number) {
-                                print('On Saved: $number');
-                              },
-                            ),
+                         Padding(
+                           padding: const EdgeInsets.fromLTRB(30, 20, 20, 0),
+                           child: Text("Enter Phone Number",style: TextStyle(color: Color(0xff033934),fontFamily: 'Poppins',fontWeight: FontWeight.w500,fontSize: 14,decoration: TextDecoration.none),),
                          ),
+                          Stack(
+                                 children: [
+
+                                   Positioned(
+                                     left: 31,
+                                     top: -14,
+                                     right: 10,
+
+                                     child: Container(
+                                       // top : 100,
+                                       height: 50,
+                                       width: totalWidth,
+                                       padding: EdgeInsets.all(20),
+                                       margin: const EdgeInsets.fromLTRB(0, 20, 20, 20),
+                                       decoration: BoxDecoration(
+                                           color: const Color.fromRGBO(8, 143, 129, 0.08),
+                                           borderRadius: const BorderRadius.all( Radius.circular(8)
+
+                                           ),
+                                           border: Border.all(color: const Color(0xff088F81)
+
+                                           )
+
+                                       ),
+                                     ),
+                                   ),
+                                   Container(
+                                     height: 60,
+                                     child: InternationalPhoneNumberInput(
+
+
+                                       onInputChanged: (PhoneNumber number) {
+                                         print(number.phoneNumber);
+                                       },
+                                       onInputValidated: (bool value) {
+                                         print(value);
+                                       },
+                                       selectorConfig: const SelectorConfig(
+                                         selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                                       ),
+                                       hintText: "9900265566",
+                                       ignoreBlank: false,
+                                       autoValidateMode: AutovalidateMode.disabled,
+                                       selectorTextStyle: TextStyle(color: Colors.black),
+                                       initialValue: number,
+                                       textFieldController: controller,
+                                       formatInput: false,
+                                       inputBorder: InputBorder.none,
+                                       keyboardType:
+                                       TextInputType.numberWithOptions(signed: true, decimal: true),
+                                       onSaved: (PhoneNumber number) {
+                                         print('On Saved: $number');
+                                       },
+                                     ),
+                                   ),
+                                   Positioned(
+                                       child: Container(
+                                         height: 50,
+                                         color: Colors.white,
+                                         width: 31,
+
+                                       )),
+                                   Positioned(
+                                     top: 17,
+                                     left: 90,
+                                     height: 30,
+                                     child: VerticalDivider(
+                                       color: Color(0xff7FA89C),
+                                       thickness: 0.5,
+                                     ),
+                                   )
+
+
+
+
+                                 ],
+                           )
+
+
                              // ElevatedButton(
                              //   onPressed: () {
                              //     formKey.currentState?.validate();
@@ -171,11 +218,15 @@ class _Otp1State extends State<Otp1> {
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.0),
                                 )
-                            ),),
+                            ),
+                          shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
+                          elevation: MaterialStateProperty.all<double>(20),
+                        ),
                         onPressed: () {
                           formKey.currentState?.save();
                         },
                         child: Text('Get OTP',),
+
                       ),
                     ),
                     TextButton(
@@ -187,7 +238,7 @@ class _Otp1State extends State<Otp1> {
                           child: Text("Have a Pin?",style: TextStyle( color: Colors.transparent,
                               decoration: TextDecoration.underline,
                               decorationColor: Color(0xff088F81),
-                                shadows: [Shadow( offset: Offset(0, -3))]),
+                                shadows: [Shadow(color:Color(0xff088F81) , offset: Offset(0, -3))]),
                           )
 
                         ))
