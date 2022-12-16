@@ -1,0 +1,33 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/material.dart';
+import 'package:gameon/otp/views/pages/otp1.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(
+    DevicePreview(builder: (BuildContext context)=> MyApp())
+  );
+
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color(0xff088F81),
+          // secondary: const Color(0xFFFFC107),
+
+        ),
+      ),
+      home: const Otp1(),
+    );
+  }
+}
