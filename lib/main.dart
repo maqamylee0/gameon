@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:gameon/otp/views/pages/otp1.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'booking/views/pages/booking.dart';
+import 'otp/views/pages/otp2.dart';
+import 'otp/views/pages/otp3.dart';
+
 void main() {
   runApp(
     DevicePreview(builder: (BuildContext context)=> MyApp())
@@ -23,11 +27,13 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: const Color(0xff088F81),
+          secondary: const Color(0xff088F81)
           // secondary: const Color(0xFFFFC107),
+
 
         ),
       ),
-      home: const Otp1(),
+      home: SafeArea(child: const Booking()),
     );
   }
 }

@@ -17,6 +17,7 @@ class _Otp1State extends State<Otp1> {
   final TextEditingController controller = TextEditingController();
   String initialCountry = 'NG';
   PhoneNumber number = PhoneNumber(isoCode: 'NG');
+  String phone = "9900265566";
   @override
   Widget build(BuildContext context) {
     double topHeight = MediaQuery.of(context).size.height*0.3;
@@ -26,7 +27,9 @@ class _Otp1State extends State<Otp1> {
 
 
     return Scaffold(
+
       body: SizedBox(
+
         height: totalHeight ,
 
         child: Stack(
@@ -81,6 +84,7 @@ class _Otp1State extends State<Otp1> {
                     )),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children:  [
                     const SizedBox(height: 20,),
 
@@ -95,116 +99,118 @@ class _Otp1State extends State<Otp1> {
                    const SizedBox(
                      height: 10
                    ),
-                   Container(
-                     width: totalWidth,
-                     // padding: const EdgeInsets.all(20),
-                     child: Column(
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children:  [
-                         Padding(
-                           padding: const EdgeInsets.fromLTRB(30, 20, 20, 0),
-                           child: Text("Enter Phone Number",style: TextStyle(color: Color(0xff033934),fontFamily: 'Poppins',fontWeight: FontWeight.w500,fontSize: 14,decoration: TextDecoration.none),),
-                         ),
-                          Stack(
-                                 children: [
+                   Expanded(
+                     child: Container(
+                       width: totalWidth,
+                       // padding: const EdgeInsets.all(20),
+                       child: Column(
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children:  [
+                           Padding(
+                             padding: const EdgeInsets.fromLTRB(30, 20, 20, 0),
+                             child: Text("Enter Phone Number",style: TextStyle(color: Color(0xff033934),fontFamily: 'Poppins',fontWeight: FontWeight.w500,fontSize: 14,decoration: TextDecoration.none),),
+                           ),
+                            Stack(
+                                   children: [
 
-                                   Positioned(
-                                     left: 31,
-                                     top: -14,
-                                     right: 10,
+                                     Positioned(
+                                       left: 31,
+                                       top: -14,
+                                       right: 10,
 
-                                     child: Container(
-                                       // top : 100,
-                                       height: 50,
-                                       width: totalWidth,
-                                       padding: EdgeInsets.all(20),
-                                       margin: const EdgeInsets.fromLTRB(0, 20, 20, 20),
-                                       decoration: BoxDecoration(
-                                           color: const Color.fromRGBO(8, 143, 129, 0.08),
-                                           borderRadius: const BorderRadius.all( Radius.circular(8)
-
-                                           ),
-                                           border: Border.all(color: const Color(0xff088F81)
-
-                                           )
-
-                                       ),
-                                     ),
-                                   ),
-                                   Container(
-                                     height: 60,
-                                     child: InternationalPhoneNumberInput(
-
-
-                                       onInputChanged: (PhoneNumber number) {
-                                         print(number.phoneNumber);
-                                       },
-                                       onInputValidated: (bool value) {
-                                         print(value);
-                                       },
-                                       selectorConfig: const SelectorConfig(
-                                         selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-                                       ),
-                                       hintText: "9900265566",
-                                       ignoreBlank: false,
-                                       autoValidateMode: AutovalidateMode.disabled,
-                                       selectorTextStyle: TextStyle(color: Colors.black),
-                                       initialValue: number,
-                                       textFieldController: controller,
-                                       formatInput: false,
-                                       inputBorder: InputBorder.none,
-                                       keyboardType:
-                                       TextInputType.numberWithOptions(signed: true, decimal: true),
-                                       onSaved: (PhoneNumber number) {
-                                         print('On Saved: $number');
-                                       },
-                                     ),
-                                   ),
-                                   Positioned(
                                        child: Container(
+                                         // top : 100,
                                          height: 50,
-                                         color: Colors.white,
-                                         width: 31,
+                                         width: totalWidth,
+                                         padding: EdgeInsets.all(20),
+                                         margin: const EdgeInsets.fromLTRB(0, 20, 20, 20),
+                                         decoration: BoxDecoration(
+                                             color: const Color.fromRGBO(8, 143, 129, 0.08),
+                                             borderRadius: const BorderRadius.all( Radius.circular(8)
 
-                                       )),
-                                   Positioned(
-                                     top: 17,
-                                     left: 90,
-                                     height: 30,
-                                     child: VerticalDivider(
-                                       color: Color(0xff7FA89C),
-                                       thickness: 0.5,
+                                             ),
+                                             border: Border.all(color: const Color(0xff088F81)
+
+                                             )
+
+                                         ),
+                                       ),
                                      ),
-                                   )
+                                     Container(
+                                       height: 60,
+                                       child: InternationalPhoneNumberInput(
+
+
+                                         onInputChanged: (PhoneNumber number) {
+                                           print(number.phoneNumber);
+                                         },
+                                         onInputValidated: (bool value) {
+                                           print(value);
+                                         },
+                                         selectorConfig: const SelectorConfig(
+                                           selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                                         ),
+                                         hintText: "9900265566",
+                                         ignoreBlank: false,
+                                         autoValidateMode: AutovalidateMode.disabled,
+                                         selectorTextStyle: TextStyle(color: Colors.black),
+                                         initialValue: number,
+                                         textFieldController: controller,
+                                         formatInput: false,
+                                         inputBorder: InputBorder.none,
+                                         keyboardType:
+                                         TextInputType.numberWithOptions(signed: true, decimal: true),
+                                         onSaved: (PhoneNumber number) {
+                                           print('On Saved: $number');
+                                         },
+                                       ),
+                                     ),
+                                     Positioned(
+                                         child: Container(
+                                           height: 50,
+                                           color: Colors.white,
+                                           width: 31,
+
+                                         )),
+                                     Positioned(
+                                       top: 17,
+                                       left: 90,
+                                       height: 30,
+                                       child: VerticalDivider(
+                                         color: Color(0xff7FA89C),
+                                         thickness: 0.5,
+                                       ),
+                                     )
 
 
 
 
-                                 ],
-                           )
+                                   ],
+                             )
 
 
-                             // ElevatedButton(
-                             //   onPressed: () {
-                             //     formKey.currentState?.validate();
-                             //   },
-                             //   child: Text('Validate'),
-                             // ),
-                             // ElevatedButton(
-                             //   onPressed: () {
-                             //     getPhoneNumber('+15417543010');
-                             //   },
-                             //   child: Text('Update'),
-                             // ),
-                             // ElevatedButton(
-                             //   onPressed: () {
-                             //     formKey.currentState?.save();
-                             //   },
-                             //   child: Text('Save'),
-                             // ),
+                               // ElevatedButton(
+                               //   onPressed: () {
+                               //     formKey.currentState?.validate();
+                               //   },
+                               //   child: Text('Validate'),
+                               // ),
+                               // ElevatedButton(
+                               //   onPressed: () {
+                               //     getPhoneNumber('+15417543010');
+                               //   },
+                               //   child: Text('Update'),
+                               // ),
+                               // ElevatedButton(
+                               //   onPressed: () {
+                               //     formKey.currentState?.save();
+                               //   },
+                               //   child: Text('Save'),
+                               // ),
 
 
-                       ],
+                         ],
+                       ),
                      ),
                    ),
                     SizedBox(height: 140,),
@@ -241,7 +247,8 @@ class _Otp1State extends State<Otp1> {
                                 shadows: [Shadow(color:Color(0xff088F81) , offset: Offset(0, -3))]),
                           )
 
-                        ))
+                        )),
+                    SizedBox(height: 40,)
                   ],
                 ),
               ),
