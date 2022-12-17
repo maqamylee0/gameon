@@ -28,7 +28,7 @@ class _BookingState extends State<Booking> {
                 color: Color(0xff088F81),
                 height: 100,),
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 60, 0, 10),
+                padding: const EdgeInsets.fromLTRB(0, 60, 0, 5),
                 child: AppBar(
 
                   flexibleSpace: Container(),
@@ -56,11 +56,7 @@ class _BookingState extends State<Booking> {
                     SizedBox(width: 10,),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: IconButton(
-                          onPressed: (){
-                          },
-                          icon: const FaIcon(FontAwesomeIcons.sliders,color: Colors.white,size: 26)
-                      ),
+                      child: FaIcon(FontAwesomeIcons.sliders,color: Colors.white,size: 26),
                     )
 
                   ],
@@ -159,7 +155,7 @@ class Ground extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10)
                   ),
                   height: 94,
-                  width: 83,
+                  width: 85,
 
                   // child: FittedBox(
                   //
@@ -196,71 +192,62 @@ class Ground extends StatelessWidget {
 
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            SizedBox(
-                              width: 80,
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5.0),
-                                      )
-                                  ),
-                                  shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
-                                  elevation: MaterialStateProperty.all<double>(20),
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    )
                                 ),
-                                onPressed: () {
-                                },
-                                child: Text('10:00 am',style: TextStyle(fontSize: 10),),
-
+                                shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
+                                elevation: MaterialStateProperty.all<double>(20),
                               ),
+                              onPressed: () {
+                              },
+                              child: Text('10:00 am',),
+
                             ),
-                            SizedBox(
-                              width: 80,
-                              child: ElevatedButton(
+                            ElevatedButton(
 
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
-                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
 
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5.0),
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5.0),
 
-                                      ),
+                                    ),
 
-                                  ),
-                                  side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
-                                                  {
-                                          return const BorderSide(color: Colors.grey);
-                                                 }
+                                ),
+                                side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
+                                                {
+                                        return const BorderSide(color: Colors.grey);
+                                               }
     return null; // Defer to default value on the theme or widget.
-                                                        }),
-                                  // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
-                                  // elevation: MaterialStateProperty.all<double>(20),
-                                ),
-                                onPressed: () {
-                                },
-                                child: Text('1:00pm',style: TextStyle(color: Colors.grey,fontSize: 10),),
-
+                                                      }),
+                                // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
+                                // elevation: MaterialStateProperty.all<double>(20),
                               ),
+                              onPressed: () {
+                              },
+                              child: Text('1:00 pm',style: TextStyle(color: Colors.grey,fontSize: 12),),
+
                             ),
-                            SizedBox(
-                              width: 80,
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5.0),
-                                      )
-                                  ),
-                                  shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
-                                  elevation: MaterialStateProperty.all<double>(20),
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    )
                                 ),
-                                onPressed: () {
-                                },
-                                child: Text('4:00pm',style: TextStyle(fontSize: 10),),
-
+                                shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
+                                elevation: MaterialStateProperty.all<double>(20),
                               ),
+                              onPressed: () {
+                              },
+                              child: Text('4:00pm',),
+
                             ),
                           ],
                         ),
@@ -282,58 +269,52 @@ class Ground extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
 
                           children: [
-                            SizedBox(
-                              width: 80,
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
-                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5.0),
-                                      )
-                                  ),
-                                  side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
-                                    {
-                                      return const BorderSide(color: Colors.red);
-                                    }
-                                    return null; // Defer to default value on the theme or widget.
-                                  }),
-                                  // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
-                                  // elevation: MaterialStateProperty.all<double>(20),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    )
                                 ),
-                                onPressed: () {
-                                },
-                                child: Text('2:00pm',style: TextStyle(color: Colors.red,fontSize: 10),),
-
+                                side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
+                                  {
+                                    return const BorderSide(color: Colors.red);
+                                  }
+                                  return null; // Defer to default value on the theme or widget.
+                                }),
+                                // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
+                                // elevation: MaterialStateProperty.all<double>(20),
                               ),
+                              onPressed: () {
+                              },
+                              child: Text('2:00pm',style: TextStyle(color: Colors.red),),
+
                             ),
                             SizedBox(width: 20,),
-                            SizedBox(
-                              width: 80,
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
-                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5.0),
-                                      )
-                                  ),
-                                  side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
-                                    {
-                                      return const BorderSide(color: Colors.grey);
-                                    }
-                                    return null; // Defer to default value on the theme or widget.
-                                  }),
-                                  // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
-                                  // elevation: MaterialStateProperty.all<double>(20),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    )
                                 ),
-                                onPressed: () {
-                                },
-                                child: Text('4:00pm',style: TextStyle(color: Colors.grey,fontSize: 10),),
-
+                                side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
+                                  {
+                                    return const BorderSide(color: Colors.grey);
+                                  }
+                                  return null; // Defer to default value on the theme or widget.
+                                }),
+                                // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
+                                // elevation: MaterialStateProperty.all<double>(20),
                               ),
+                              onPressed: () {
+                              },
+                              child: Text('4:00pm',style: TextStyle(color: Colors.grey),),
+
                             ),
 
                           ],
