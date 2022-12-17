@@ -13,6 +13,7 @@ class _BookingState extends State<Booking> {
 
   @override
   Widget build(BuildContext context) {
+    double deviceWidth = MediaQuery.of(context).size.width;
 
     return SafeArea(
       child: Scaffold(
@@ -41,7 +42,7 @@ class _BookingState extends State<Booking> {
                       icon: const Icon(Icons.menu_outlined)
                   ),
 
-                  title: Text("Grounds",style: TextStyle(fontSize: 24,color: Colors.white),),
+                  title: Text("Grounds",style: TextStyle(fontWeight:FontWeight.w600,fontSize: 16,color: Colors.white),),
 
                   actions: [
 
@@ -50,13 +51,14 @@ class _BookingState extends State<Booking> {
                       child: IconButton(
                           onPressed: (){
                           },
-                          icon: const Icon(Icons.search,color: Colors.white,size: 36)
+                          icon: const FaIcon(FontAwesomeIcons.search,size: 18,)
+                          //Icon(Icons.search,color: Colors.white,size: 32,)
                       ),
                     ),
                     SizedBox(width: 10,),
                     Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: FaIcon(FontAwesomeIcons.sliders,color: Colors.white,size: 26),
+                      padding: const EdgeInsets.fromLTRB(0, 20, 20, 40),
+                      child: FaIcon(FontAwesomeIcons.sliders,color: Colors.white,size: 18),
                     )
 
                   ],
@@ -91,19 +93,25 @@ class _BookingState extends State<Booking> {
              SizedBox(height: 10,),
              Card(
                child: Container(
-                 padding: EdgeInsets.all(15),
+                 padding: EdgeInsets.all(5),
                  child: Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
-                     FaIcon(FontAwesomeIcons.locationDot),
-                     Text("Maharastra, India"),
+                     Row(
+                       children: [
+                         FaIcon(FontAwesomeIcons.locationDot),
+                         SizedBox(width: 20,),
+                         Text("Maharastra, India"),
+                       ],
+                     ),
+
                      TextButton(onPressed:(){}, child:
                      Row(
                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                      //   crossAxisAlignment: CrossAxisAlignment.center,
                        children: [
-                         Text("Change"),
-                         Icon(Icons.arrow_forward_ios,size: 15,)
+                         Text("Change",style: TextStyle(fontSize: 12),),
+                         Icon(Icons.arrow_forward_ios,size: 12,)
                        ],
 
                      )
@@ -138,6 +146,7 @@ class Ground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   double deviceWidth = MediaQuery.of(context).size.width;
     return Container(
       child: Card(
         child: Column(
@@ -180,7 +189,8 @@ class Ground extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
 
                           children: [
-                            Text("20 over"),
+                            Text("20 over",style: TextStyle(fontWeight: FontWeight.w500,color: Color(0xff033934
+                        ))),
 
                           ],
                         ),
@@ -204,7 +214,7 @@ class Ground extends StatelessWidget {
                               ),
                               onPressed: () {
                               },
-                              child: Text('10:00 am',),
+                              child: Text('10:00 am',style: TextStyle(fontSize: deviceWidth*0.005),),
 
                             ),
                             ElevatedButton(
@@ -231,7 +241,7 @@ class Ground extends StatelessWidget {
                               ),
                               onPressed: () {
                               },
-                              child: Text('1:00 pm',style: TextStyle(color: Colors.grey,fontSize: 12),),
+                              child: Text('1:00 pm',style: TextStyle(color: Colors.grey,fontSize: deviceWidth*0.005),),
 
                             ),
                             ElevatedButton(
@@ -246,7 +256,7 @@ class Ground extends StatelessWidget {
                               ),
                               onPressed: () {
                               },
-                              child: Text('4:00pm',),
+                              child: Text('4:00pm',style: TextStyle(fontSize: deviceWidth*0.005),),
 
                             ),
                           ],
@@ -258,7 +268,8 @@ class Ground extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
 
                           children: [
-                            Text("30 over"),
+                            Text("30 over",style: TextStyle(fontWeight: FontWeight.w500,color: Color(0xff033934
+                            )),),
 
                           ],
                         ),
@@ -289,7 +300,7 @@ class Ground extends StatelessWidget {
                               ),
                               onPressed: () {
                               },
-                              child: Text('2:00pm',style: TextStyle(color: Colors.red),),
+                              child: Text('2:00pm',style: TextStyle(color: Colors.red,fontSize: deviceWidth*0.005),),
 
                             ),
                             SizedBox(width: 20,),
@@ -313,7 +324,7 @@ class Ground extends StatelessWidget {
                               ),
                               onPressed: () {
                               },
-                              child: Text('4:00pm',style: TextStyle(color: Colors.grey),),
+                              child: Text('4:00pm',style: TextStyle(color: Colors.grey,fontSize: deviceWidth*0.005),),
 
                             ),
 
@@ -333,7 +344,8 @@ class Ground extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                  child: Text("Wakanda Internantional Cricket Stadium"),
+                  child: Text("Wakanda Internantional Cricket Stadium",style: TextStyle(fontSize:15,fontWeight:FontWeight.w600,color: Color(0xff033934
+                  )),),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),                  child: Row(
@@ -356,12 +368,12 @@ class Ground extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                     children: [
-                      Text("Pitch type : Mat"),
+                      Text("Pitch type : Mat",style: TextStyle(color:Color(0xff033934),fontWeight: FontWeight.w500),),
                       Row(
                         children: [
-                          FaIcon(FontAwesomeIcons.compass,size: 14,),
+                          FaIcon(FontAwesomeIcons.compass,size: 14,color:Color(0xff088F81) ,),
                           SizedBox(width: 20,),
-                          Text("Navigate")
+                          Text("Navigate",style: TextStyle(color: Color(0xff088F81),fontWeight: FontWeight.w500),)
                         ],
                       )
                     ],
