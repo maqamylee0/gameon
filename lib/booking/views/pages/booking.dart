@@ -92,31 +92,37 @@ class _BookingState extends State<Booking> {
                      ),
              SizedBox(height: 10,),
              Card(
-               child: Container(
-                 padding: EdgeInsets.all(5),
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: [
-                     Row(
-                       children: [
-                         FaIcon(FontAwesomeIcons.locationDot),
-                         SizedBox(width: 20,),
-                         Text("Maharastra, India"),
-                       ],
-                     ),
+               child: InkWell(
+                 onTap: (){
+                   Navigator.pushNamed(context, 'ground details');
 
-                     TextButton(onPressed:(){}, child:
-                     Row(
+                 },
+                 child: Container(
+                   padding: EdgeInsets.all(5),
+                   child: Row(
                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                     //   crossAxisAlignment: CrossAxisAlignment.center,
-                       children: [
-                         Text("Change",style: TextStyle(fontSize: 12),),
-                         Icon(Icons.arrow_forward_ios,size: 12,)
-                       ],
+                     children: [
+                       Row(
+                         children: [
+                           FaIcon(FontAwesomeIcons.locationDot),
+                           SizedBox(width: 20,),
+                           Text("Maharastra, India"),
+                         ],
+                       ),
 
-                     )
-                     )
-                   ]
+                       TextButton(onPressed:(){}, child:
+                       Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                       //   crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                           Text("Change",style: TextStyle(fontSize: 12),),
+                           Icon(Icons.arrow_forward_ios,size: 12,)
+                         ],
+
+                       )
+                       )
+                     ]
+                   ),
                  ),
                ),
              ),

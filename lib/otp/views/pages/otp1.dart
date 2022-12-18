@@ -243,7 +243,7 @@ class _Otp1State extends State<Otp1> {
                           padding: EdgeInsets.all(15.0),
                           child: Text("Have a Pin?",style: TextStyle( color: Colors.transparent,
                               decoration: TextDecoration.underline,
-                              decorationColor: Color(0xff088F81),
+                              decorationColor: Color(0xff088F81 ),
                                 shadows: [Shadow(color:Color(0xff088F81) , offset: Offset(0, -3))]),
                           )
 

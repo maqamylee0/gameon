@@ -4,6 +4,7 @@ import 'package:gameon/otp/views/pages/otp1.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'booking/views/pages/booking.dart';
+import 'booking/views/pages/booking_details.dart';
 import 'otp/views/pages/otp2.dart';
 import 'otp/views/pages/otp3.dart';
 
@@ -33,7 +34,12 @@ class MyApp extends StatelessWidget {
 
         ),
       ),
-      home: SafeArea(child: const Booking()),
+      home: SafeArea(child: const GroundDetails()),
+      routes: {
+        'otp1': (context) => const Otp1(),
+        'booking': (context) => const Booking(),
+        'ground details': (context) => const GroundDetails()
+      },
     );
   }
 }
