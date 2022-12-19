@@ -119,7 +119,7 @@ class _GroundDetailsState extends State<GroundDetails> {
                               width: 14.0,
                               allowDrawingOutsideViewBox: true,
                             )      ,                    SizedBox(width: 20,),
-                            Text("Navigate",style: TextStyle(color: Color(0xff088F81),fontWeight: FontWeight.w500),)
+                            Text("Navigate",style: TextStyle(color: Color(0xff088F81),decoration: TextDecoration.underline,fontWeight: FontWeight.w500),)
                           ],
                         ),
                         Text("Pitch type : Mat",style: TextStyle(color:Color(0xff033934),fontWeight: FontWeight.w500),),

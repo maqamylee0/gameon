@@ -11,7 +11,8 @@ import 'otp/views/pages/otp3.dart';
 
 void main() {
   runApp(
-    DevicePreview(builder: (BuildContext context)=> MyApp())
+      MyApp()
+    // DevicePreview(builder: (BuildContext context)=> MyApp())
   );
 
 }
@@ -35,9 +36,10 @@ class MyApp extends StatelessWidget {
 
         ),
       ),
-      home: SafeArea(child:  Otp2()),
+      home: SafeArea(child:  Otp1()),
       routes: {
         'otp1': (context) => const Otp1(),
+        'otp2': (context) => const Otp2(),
         'booking': (context) => const Booking(),
         'ground details': (context) => const GroundDetails()
       },

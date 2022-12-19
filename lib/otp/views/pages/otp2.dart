@@ -17,12 +17,22 @@ class _Otp2State extends State<Otp2> {
   bool isVerified = false;
   bool canResend = false;
   Timer? timer;
+  Duration myDuration = Duration(minutes: 1);
   StreamController<ErrorAnimationType>? errorController;
 
   bool hasError = false;
   String currentText = "";
   String phone = "9900265566";
   String time = "00:59";
+    int seconds = 00;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    startTimer();
+  }
+
   final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -31,6 +41,7 @@ class _Otp2State extends State<Otp2> {
     double totalWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+        resizeToAvoidBottomInset:false,
         body: SizedBox(
             height: totalHeight,
             child: Stack(children: [
@@ -40,7 +51,7 @@ class _Otp2State extends State<Otp2> {
                   color: const Color(0x00088f81).withOpacity(0.8),
 
                   image: const DecorationImage(
-                    image: AssetImage("images/stadium.jpeg"),
+                    image: AssetImage("assets/images/stadium.jpeg"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -61,10 +72,10 @@ class _Otp2State extends State<Otp2> {
                       height: topHeight,
                       child: Center(
                         child: SvgPicture.asset(
-                          'logo.svg',
+                          'assets/logo.svg',
                           alignment: Alignment.bottomCenter,
-                          width: MediaQuery.of(context).size.width * 0.08,
-                          height: MediaQuery.of(context).size.height * 0.08,
+                          width: MediaQuery.of(context).size.width * 0.1,
+                          height: MediaQuery.of(context).size.height * 0.1,
                         ),
                       ),
                     ),
@@ -110,6 +121,7 @@ class _Otp2State extends State<Otp2> {
                               ),
                             ),
                             const SizedBox(height: 10),
+
                             Expanded(
                                 child: Container(
                                     color: Colors.white,
@@ -118,24 +130,17 @@ class _Otp2State extends State<Otp2> {
                                     // padding: const EdgeInsets.all(20),
                                     child: Column(
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                            CrossAxisAlignment.center,
                                         children: [
-                                          Stack(
-                                            children: [
                                               GestureDetector(
                                                 onTap: () {},
-                                                child: SizedBox(
-
-                                                    child: Column(
-                                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                                      children: [
-
-                                                        Form(
+                                                child:
+                                                         Form(
                                                           key: formKey,
                                                           child: Padding(
                                                               padding: const EdgeInsets
                                                                       .symmetric(
-                                                                  vertical: 8.0,
+                                                                  vertical: 2.0,
                                                                   horizontal:
                                                                       30),
                                                               child:
@@ -144,11 +149,13 @@ class _Otp2State extends State<Otp2> {
                                                                     context,
                                                                 pastedTextStyle:
                                                                     const TextStyle(
-                                                                  color: Colors
-                                                                      .white,
+                                                                  color: Color(0xff088F81),
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
+                                                                ),
+                                                                textStyle: TextStyle(
+                                                                  color: Color(0xff088F81)
                                                                 ),
 
                                                                 length: 4,
@@ -171,6 +178,11 @@ class _Otp2State extends State<Otp2> {
                                                                 // },
                                                                 pinTheme:
                                                                     PinTheme(
+                                                                      inactiveColor:const Color.fromRGBO(8, 143, 129, 0.08) ,
+                                                                  inactiveFillColor: const Color.fromRGBO(8, 143, 129, 0.08),
+                                                                  selectedFillColor: const Color.fromRGBO(8, 143, 129, 0.08),
+                                                                  selectedColor:  const Color(0xff088F81),
+                                                                  activeColor: Color(0xff088F81),
                                                                   shape:
                                                                       PinCodeFieldShape
                                                                           .box,
@@ -225,52 +237,48 @@ class _Otp2State extends State<Otp2> {
                                                               )
                                                           ),
                                                         ),
-
-                                                        const SizedBox(
-                                                          height: 20,
-                                                        ),
-
-
-
-                                                            Text(
-                                                                "OTP sent to $phone",style: TextStyle(color:  Color(0xff088F81)),),
-                                                        SizedBox(height: 10,),
-                                                        Row(
-                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                          children: [
-                                                            Icon(Icons.access_time_filled_rounded ,color: Color(0xff088F81),),
-                                                            Text("$time",style: TextStyle(color: Color(0xff088F81)),)
-                                                          ],
-                                                        )
-                                                      ],
-                                                    ),
-
-                                                ),
                                               ),
+                                          Text(
+                                            "OTP sent to $phone",style: TextStyle(color:  Color(0xff088F81)),),
+                                          SizedBox(height: 10,),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Icon(Icons.access_time_filled_rounded ,color: Color(0xff088F81),),
+                                              Text("00:${seconds}",style: TextStyle(color: Color(0xff088F81)),)
                                             ],
                                           ),
-                                        ])
+
+
+                                            ],
+                                          ),
+
+
+
+
+
                                 )),
-                            SizedBox(
-                              height: 140,
-                            ),
+                            // SizedBox(
+                            //   height: 140,
+                            // ),
                             Container(
                               width: 140,
                               height: 40,
                               child: ElevatedButton(
                                 style: ButtonStyle(
                                   shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  )),
+                                        borderRadius: BorderRadius.circular(8.0),
+                                      )),
                                   shadowColor: MaterialStateProperty.all<Color>(
                                       Color.fromRGBO(8, 143, 129, 0.4)),
                                   elevation:
-                                      MaterialStateProperty.all<double>(20),
+                                  MaterialStateProperty.all<double>(20),
                                 ),
                                 onPressed: () {
-                                  formKey.currentState?.save();
+                                  // formKey.currentState?.save();
+                                  Navigator.pushNamed(context, 'booking');
                                 },
                                 child: Text(
                                   'Login',
@@ -281,13 +289,31 @@ class _Otp2State extends State<Otp2> {
                             SizedBox(
                               height: 40,
                             )
+
+
                           ],
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               )
             ])));
+  }
+  void startTimer() {
+    timer =
+        Timer.periodic(Duration(seconds: 1), (_) => setCountDown());
+  }
+  void setCountDown() {
+    final reduceSecondsBy = 1;
+    setState(() {
+      seconds = myDuration.inSeconds - reduceSecondsBy;
+      if (seconds == 0) {
+        timer!.cancel();
+        
+      } else {
+        myDuration = Duration(seconds: seconds);
+      }
+    });
   }
 }

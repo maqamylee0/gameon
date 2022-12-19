@@ -92,7 +92,7 @@ class _BookingState extends State<Booking> {
                      ),
              SizedBox(height: 10,),
              Card(
-               child: InkWell(
+               child: GestureDetector(
                  onTap: (){
                    Navigator.pushNamed(context, 'ground details');
 
