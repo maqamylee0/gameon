@@ -29,6 +29,8 @@ class _Card2State extends State<Card2> {
                 ElevatedButton(
 
                   style: ButtonStyle(
+                    minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                    padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -50,7 +52,7 @@ class _Card2State extends State<Card2> {
                   ),
                   onPressed: () {
                   },
-                  child: Text('03:00 am',style: TextStyle(color:Color(0xff088F81),fontSize: deviceWidth*0.015),),
+                  child: Text('03:00 am',style: TextStyle(color:Color(0xff088F81),fontSize: 10),),
 
                 ),
 
@@ -72,6 +74,8 @@ class _Card2State extends State<Card2> {
                     SizedBox(height: 10,),
                     ElevatedButton(
                       style: ButtonStyle(
+                        minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                        padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
                         // backgroundColor: MaterialStateProperty.all<Color>(Color(0xffF4F4F4)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
@@ -83,7 +87,7 @@ class _Card2State extends State<Card2> {
                       ),
                       onPressed: () {
                       },
-                      child: Text('Available',style: TextStyle(color:Colors.white,fontSize: deviceWidth*0.015),),
+                      child: Text('Available',style: TextStyle(color:Colors.white,fontSize: 10),),
 
                     ),
                   ],
@@ -104,6 +108,8 @@ class _Card2State extends State<Card2> {
 
                     ElevatedButton(
                       style: ButtonStyle(
+                        minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                        padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
                         // backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(114, 202, 193, 0.4)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
@@ -115,7 +121,7 @@ class _Card2State extends State<Card2> {
                       ),
                       onPressed: () {
                       },
-                      child: Text('Available',style: TextStyle(color:Colors.white,fontSize: deviceWidth*0.015),),
+                      child: Text('Available',style: TextStyle(color:Colors.white,fontSize: 10),),
 
                     ),
                     SizedBox(height: 40,)
@@ -136,7 +142,7 @@ class _Card2State extends State<Card2> {
               children: [
                 Row(
                   children: [
-                    Text("Ball Provided",style: TextStyle(fontSize: deviceWidth*0.011),),
+                    Text("Ball Provided",style: TextStyle(fontSize: 8),),
                     Checkbox(value: !value, onChanged: ( r){
                       setState(() {
                         value = !value!;
@@ -156,7 +162,7 @@ class _Card2State extends State<Card2> {
                 ),
                 Row(
                   children: [
-                    Text("Umpire Provided" ,style: TextStyle(fontSize: deviceWidth*0.011),),
+                    Text("Umpire Provided" ,style: TextStyle(fontSize: 8),),
                     Checkbox(value: value, onChanged: ( r){
                       setState(() {
                         value = !value!;
@@ -176,8 +182,8 @@ class _Card2State extends State<Card2> {
                 ),
                 Row(
                   children: [
-                    Text("Ball Detail :",style: TextStyle(fontSize: deviceWidth*0.011),),
-                    Text("Tennis",style: TextStyle(fontSize: deviceWidth*0.011),)
+                    Text("Ball Detail :",style: TextStyle(fontSize: 8),),
+                    Text("Tennis",style: TextStyle(fontSize:8),)
                   ],
                 )
               ],
@@ -210,7 +216,7 @@ class _Card2State extends State<Card2> {
                     ),
                     onPressed: () {
                     },
-                    child: Text('Book now',style: TextStyle(fontSize: deviceWidth*0.02),),
+                    child: Text('Book now',style: TextStyle(fontSize: 15),),
 
                   ),
                 ),

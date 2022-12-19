@@ -66,25 +66,25 @@ class _GroundDetailsState extends State<GroundDetails> {
               // SizedBox(height: 20,),
 
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset(
-                      'calenda.svg',
+                      'assets/calenda.svg',
                       height: 20.0,
                       width: 20.0,
                       allowDrawingOutsideViewBox: true,
                     ) ,
                     SizedBox(width: 20,),
-                    Text("Sunday ,21 June 2021",style: TextStyle(fontSize: 18,color: Color(0xff033934)),)
+                    Text("Sunday ,21 June 2021",style: TextStyle(fontSize: 14,color: Color(0xff033934)),)
                   ],
                 ),
               ),
               Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    image: DecorationImage(image: AssetImage("images/pitch.png"), fit: BoxFit.cover),
+                    image: DecorationImage(image: AssetImage("assets/images/pitch.png"), fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(20)
                 ),
                 height: deviceHeight*0.2,
@@ -114,7 +114,7 @@ class _GroundDetailsState extends State<GroundDetails> {
                         Row(
                           children: [
                             SvgPicture.asset(
-                              'location.svg',
+                              'assets/location.svg',
                               height: 13.0,
                               width: 14.0,
                               allowDrawingOutsideViewBox: true,
@@ -146,7 +146,7 @@ class _GroundDetailsState extends State<GroundDetails> {
                               ),
 
                               child:SvgPicture.asset(
-                                'restaurant.svg',
+                                'assets/restaurant.svg',
                                 height: 10.0,
                                 width: 10.0,
                                 allowDrawingOutsideViewBox: true,
@@ -165,7 +165,7 @@ class _GroundDetailsState extends State<GroundDetails> {
                               ),
 
                               child:SvgPicture.asset(
-                                'toilet.svg',
+                                'assets/toilet.svg',
                                 height: 10.0,
                                 width: 10.0,
                                 allowDrawingOutsideViewBox: true,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Booking extends StatefulWidget {
@@ -14,6 +15,7 @@ class _BookingState extends State<Booking> {
   @override
   Widget build(BuildContext context) {
     double deviceWidth = MediaQuery.of(context).size.width;
+    int  selected = 1;
 
     return SafeArea(
       child: Scaffold(
@@ -74,20 +76,23 @@ class _BookingState extends State<Booking> {
             ],
           ),
         ),
+
        body: Container(
-         padding: EdgeInsets.all(10),
+         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
          child: Column(
            children: [
              Container(
-               padding: EdgeInsets.all(10),
+               padding: EdgeInsets.all(6),
                height: 100,
                        child: ListView.builder(
+
                            physics: NeverScrollableScrollPhysics(),
                            shrinkWrap: true,
                            itemCount:6,
                            scrollDirection: Axis.horizontal,
                            itemBuilder: (context,index){
-                             return Day1();
+
+                             return Day1(index :index, selected: selected,);
                            }),
                      ),
              SizedBox(height: 10,),
@@ -98,13 +103,20 @@ class _BookingState extends State<Booking> {
 
                  },
                  child: Container(
-                   padding: EdgeInsets.all(5),
+                   padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+
                    child: Row(
                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                      children: [
                        Row(
+
                          children: [
-                           FaIcon(FontAwesomeIcons.locationDot),
+                           SvgPicture.asset(
+                             'assets/location.svg',
+                             height: 16.0,
+                             width: 16.0,
+                             allowDrawingOutsideViewBox: true,
+                           ) ,
                            SizedBox(width: 20,),
                            Text("Maharastra, India"),
                          ],
@@ -127,14 +139,16 @@ class _BookingState extends State<Booking> {
                ),
              ),
              Expanded(
-               child: ListView.builder(
-                   physics: NeverScrollableScrollPhysics(),
-                   shrinkWrap: true,
-                   itemCount:5,
-                   scrollDirection: Axis.vertical,
-                   itemBuilder: (context,index){
-                     return Ground();
-                   }),
+               child: SingleChildScrollView(
+                 child: ListView.builder(
+                     physics: NeverScrollableScrollPhysics(),
+                     shrinkWrap: true,
+                     itemCount:5,
+                     scrollDirection: Axis.vertical,
+                     itemBuilder: (context,index){
+                       return Ground();
+                     }),
+               ),
              ),
                    ],
                  ),
@@ -154,273 +168,303 @@ class Ground extends StatelessWidget {
   Widget build(BuildContext context) {
    double deviceWidth = MediaQuery.of(context).size.width;
     return Container(
-      child: Card(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+      child: InkWell(
+        onTap: (){
+          Navigator.pushNamed(context, 'ground details');
+        },
+        child: Card(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
 
-                Container(
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage("images/ground.jpeg"), fit: BoxFit.cover),
-                    borderRadius: BorderRadius.circular(10)
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage("assets/images/ground.jpeg"), fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    height: 120,
+                    width: 85,
+
+                    // child: FittedBox(
+                    //
+                    //   child: Image.asset('images/ground.jpeg'),
+                    //   fit: BoxFit.fill,
+                    // ),
                   ),
-                  height: 94,
-                  width: 85,
+                  // Container(
+                  //   height: 150,
+                  //     width: 100,
+                  //     Bo
+                  //     child: Image.asset("images/ground.jpeg")),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding:EdgeInsets.fromLTRB(0,10,0,0),
 
-                  // child: FittedBox(
-                  //
-                  //   child: Image.asset('images/ground.jpeg'),
-                  //   fit: BoxFit.fill,
-                  // ),
-                ),
-                // Container(
-                //   height: 150,
-                //     width: 100,
-                //     Bo
-                //     child: Image.asset("images/ground.jpeg")),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
+                          child: Row(
 
-                        padding: EdgeInsets.all(2),
-                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
 
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("20 over",style: TextStyle(fontSize:12,fontWeight: FontWeight.w500,color: Color(0xff033934
+                          ))),
 
-                          children: [
-                            Text("20 over",style: TextStyle(fontWeight: FontWeight.w500,color: Color(0xff033934
-                        ))),
-
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Container(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
 
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5.0),
-                                    )
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                  minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5.0),
+                                      )
+                                  ),
                                 ),
-                                shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
-                                elevation: MaterialStateProperty.all<double>(20),
+                                onPressed: () {
+                                },
+                                child: Text('10:00 am',style: TextStyle(fontSize: 10),),
+
                               ),
-                              onPressed: () {
-                              },
-                              child: Text('10:00 am',style: TextStyle(fontSize: deviceWidth*0.005),),
+                              ElevatedButton(
 
-                            ),
-                            ElevatedButton(
+                                style: ButtonStyle(
+                                  minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
 
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5.0),
 
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5.0),
+                                      ),
 
-                                    ),
-
-                                ),
-                                side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
-                                                {
-                                        return const BorderSide(color: Colors.grey);
-                                               }
+                                  ),
+                                  side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
+                                                  {
+                                          return const BorderSide(color: Colors.grey);
+                                                 }
     return null; // Defer to default value on the theme or widget.
-                                                      }),
-                                // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
-                                // elevation: MaterialStateProperty.all<double>(20),
-                              ),
-                              onPressed: () {
-                              },
-                              child: Text('1:00 pm',style: TextStyle(color: Colors.grey,fontSize: deviceWidth*0.005),),
-
-                            ),
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5.0),
-                                    )
+                                                        }),
+                                  // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
+                                  // elevation: MaterialStateProperty.all<double>(20),
                                 ),
-                                shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
-                                elevation: MaterialStateProperty.all<double>(20),
+                                onPressed: () {
+                                },
+                                child: Text('1:00 pm',style: TextStyle(color: Colors.grey, fontSize: 10),),
+
                               ),
-                              onPressed: () {
-                              },
-                              child: Text('4:00pm',style: TextStyle(fontSize: deviceWidth*0.005),),
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                  minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5.0),
+                                      )
+                                  ),
 
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-
-                          children: [
-                            Text("30 over",style: TextStyle(fontWeight: FontWeight.w500,color: Color(0xff033934
-                            )),),
-
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-
-                          children: [
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5.0),
-                                    )
                                 ),
-                                side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
-                                  {
-                                    return const BorderSide(color: Colors.red);
-                                  }
-                                  return null; // Defer to default value on the theme or widget.
-                                }),
-                                // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
-                                // elevation: MaterialStateProperty.all<double>(20),
-                              ),
-                              onPressed: () {
-                              },
-                              child: Text('2:00pm',style: TextStyle(color: Colors.red,fontSize: deviceWidth*0.005),),
+                                onPressed: () {
+                                },
+                                child: Text('4:00pm',style: TextStyle( fontSize: 10),),
 
-                            ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+
+                            children: [
+                              Text("30 over",style: TextStyle(fontSize:12,fontWeight: FontWeight.w500,color: Color(0xff033934
+                              )),),
+
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+
+                            children: [
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                  minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5.0),
+                                      )
+                                  ),
+                                  side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
+                                    {
+                                      return const BorderSide(color: Colors.red);
+                                    }
+                                    return null; // Defer to default value on the theme or widget.
+                                  }),
+                                  // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
+                                  // elevation: MaterialStateProperty.all<double>(20),
+                                ),
+                                onPressed: () {
+                                },
+                                child: Text('2:00pm',style: TextStyle(color: Colors.red,fontSize: 10),),
+
+                              ),
+                              SizedBox(width: 20,),
+                              ElevatedButton(
+                                style: ButtonStyle(
+
+                                  minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5.0),
+                                      )
+                                  ),
+                                  side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
+                                    {
+                                      return const BorderSide(color: Colors.grey);
+                                    }
+                                    return null; // Defer to default value on the theme or widget.
+                                  }),
+                                  // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
+                                  // elevation: MaterialStateProperty.all<double>(20),
+                                ),
+                                onPressed: () {
+                                },
+                                child: Text('4:00pm',style: TextStyle(color: Colors.grey,fontSize: 10),),
+
+                              ),
+
+                            ],
+                          ),
+                        )
+
+                      ],
+                    ),
+                  )
+
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                    child: Text("Wakanda Internantional Cricket Stadium",style: TextStyle(fontSize:15,fontWeight:FontWeight.w600,color: Color(0xff033934
+                    )),),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),                  child: Row(
+
+                      children: [
+                        SvgPicture.asset(
+                          'assets/greyloc.svg',
+                          height: 13.0,
+                          width: 14.0,
+                          allowDrawingOutsideViewBox: true,
+                        ),
+                        SizedBox(width: 10,),
+                        Text("Mumbai, Maharastra, India"),
+
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    indent: 20,
+                    color: Colors.grey,
+                    endIndent: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                      children: [
+                        Text("Pitch type : Mat",style: TextStyle(color:Color(0xff033934),fontWeight: FontWeight.w500),),
+                        Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.compass,size: 14,color:Color(0xff088F81) ,),
                             SizedBox(width: 20,),
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5.0),
-                                    )
-                                ),
-                                side: MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
-                                  {
-                                    return const BorderSide(color: Colors.grey);
-                                  }
-                                  return null; // Defer to default value on the theme or widget.
-                                }),
-                                // shadowColor:MaterialStateProperty.all<Color>(Color.fromRGBO(8, 143, 129, 0.4)) ,
-                                // elevation: MaterialStateProperty.all<double>(20),
-                              ),
-                              onPressed: () {
-                              },
-                              child: Text('4:00pm',style: TextStyle(color: Colors.grey,fontSize: deviceWidth*0.005),),
-
-                            ),
-
+                            Text("Navigate",style: TextStyle(color: Color(0xff088F81),fontWeight: FontWeight.w500),)
                           ],
-                        ),
-                      )
+                        )
+                      ],
+                    ),
+                  )
 
-                    ],
-                  ),
-                )
-
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                  child: Text("Wakanda Internantional Cricket Stadium",style: TextStyle(fontSize:15,fontWeight:FontWeight.w600,color: Color(0xff033934
-                  )),),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),                  child: Row(
-
-                    children: [
-                      FaIcon(FontAwesomeIcons.locationDot,size: 14,),
-                      SizedBox(width: 10,),
-                      Text("Mumbai, Maharastra, India"),
-
-                    ],
-                  ),
-                ),
-                Divider(
-                  indent: 20,
-                  color: Colors.grey,
-                  endIndent: 20,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                    children: [
-                      Text("Pitch type : Mat",style: TextStyle(color:Color(0xff033934),fontWeight: FontWeight.w500),),
-                      Row(
-                        children: [
-                          FaIcon(FontAwesomeIcons.compass,size: 14,color:Color(0xff088F81) ,),
-                          SizedBox(width: 20,),
-                          Text("Navigate",style: TextStyle(color: Color(0xff088F81),fontWeight: FontWeight.w500),)
-                        ],
-                      )
-                    ],
-                  ),
-                )
-
-              ],
-            )
-          ],
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class Day1 extends StatelessWidget {
-  const Day1({
-    Key? key,
+class Day1 extends StatefulWidget {
+
+
+   const Day1({
+    Key? key, required this.index, required this.selected,
   }) : super(key: key);
 
+   final int index;
+   final int selected;
+  @override
+  State<Day1> createState() => _Day1State();
+}
+
+class _Day1State extends State<Day1> {
   @override
   Widget build(BuildContext context) {
+    Color background = Colors.white;
+    int selected = 1;
+    Color newBack = Color(0xff088F81);
     String month ="Jan";
     String date = "03";
     String day = "Sun";
-    return Container(
-      // margin: EdgeInsets.all(12),
-      padding: EdgeInsets.all(5),
-      decoration: BoxDecoration(
-        color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
+    return InkWell(
+      onTap: (){
+       setState(() {
+         selected = widget.index;
+       });
+      },
+      child: Container(
+        margin: EdgeInsets.fromLTRB(2, 0, 2, 0),
+        decoration: BoxDecoration(
+          color: selected == widget.index ? newBack:background,
+            borderRadius: BorderRadius.circular(18),
 
-      ),
-      height: 65,
-      width: 66,
-      child: Column(
-        children: [
-          Text("$month"),
-          Text("$date"),
-          Text("$day")
-        ],
+        ),
+        height: 50,
+        width: 50,
+        child: Column(
+          children: [
+            Text("$month",style: TextStyle(fontSize: 14),),
+            Text("$date",style: TextStyle(fontSize: 14),),
+            Text("$day",style: TextStyle(fontSize: 14),)
+          ],
+        ),
       ),
     );
   }

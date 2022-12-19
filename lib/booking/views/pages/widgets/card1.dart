@@ -29,6 +29,8 @@ class _Card1State extends State<Card1> {
                   ElevatedButton(
 
                     style: ButtonStyle(
+                      minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                      padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
                       backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -50,7 +52,7 @@ class _Card1State extends State<Card1> {
                     ),
                     onPressed: () {
                     },
-                    child: Text('10:00 am',style: TextStyle(color:Color(0xff088F81),fontSize: deviceWidth*0.015),),
+                    child: Text('10:00 am',style: TextStyle(color:Color(0xff088F81),fontSize: 10),),
 
                   ),
 
@@ -60,7 +62,7 @@ class _Card1State extends State<Card1> {
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -72,6 +74,8 @@ class _Card1State extends State<Card1> {
                       SizedBox(height: 10,),
                       ElevatedButton(
                         style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                          padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
                           backgroundColor: MaterialStateProperty.all<Color>(Color(0xffF4F4F4)),
                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
@@ -83,7 +87,7 @@ class _Card1State extends State<Card1> {
                         ),
                         onPressed: () {
                         },
-                        child: Text('Booked',style: TextStyle(color:Color(0xff088F81),fontSize: deviceWidth*0.015),),
+                        child: Text('Booked',style: TextStyle(color:Color(0xff088F81),fontSize: 10),),
 
                       ),
                     ],
@@ -91,6 +95,7 @@ class _Card1State extends State<Card1> {
                 ),
                 SizedBox(width: 30,),
                 Container(
+                  padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -104,7 +109,10 @@ class _Card1State extends State<Card1> {
 
                       ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(114, 202, 193, 0.4)),
+                          minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                          padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
+                          backgroundColor: MaterialStateProperty.all<Color>(Color(
+                              0x14088F81)),
                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5.0),
@@ -115,7 +123,7 @@ class _Card1State extends State<Card1> {
                         ),
                         onPressed: () {
                         },
-                        child: Text('Available',style: TextStyle(color:Color(0xff088F81),fontSize: deviceWidth*0.015),),
+                        child: Text('Available',style: TextStyle(color:Color(0xff088F81),fontSize: 10),),
 
                       ),
                     ],
@@ -130,12 +138,13 @@ class _Card1State extends State<Card1> {
               endIndent: 10,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: Row(
+
                 children: [
                   Row(
                     children: [
-                      Text("Ball Provided",style: TextStyle(fontSize: deviceWidth*0.011),),
+                      Text("Ball Provided",style: TextStyle(fontSize: 8),),
                       Checkbox(value: !value, onChanged: ( r){
                         setState(() {
                           value = !value!;
@@ -155,7 +164,7 @@ class _Card1State extends State<Card1> {
                   ),
                   Row(
                     children: [
-                      Text("Umpire Provided" ,style: TextStyle(fontSize: deviceWidth*0.011),),
+                      Text("Umpire Provided" ,style: TextStyle(fontSize: 8),),
                       Checkbox(value: value, onChanged: ( r){
                         setState(() {
                           value = !value!;
@@ -175,8 +184,8 @@ class _Card1State extends State<Card1> {
                   ),
                   Row(
                     children: [
-                      Text("Ball Detail :",style: TextStyle(fontSize: deviceWidth*0.011),),
-                      Text("Tennis",style: TextStyle(fontSize: deviceWidth*0.011),)
+                      Text("Ball Detail :",style: TextStyle(fontSize: 8),),
+                      Text("Tennis",style: TextStyle(fontSize: 8),)
                     ],
                   )
                 ],
@@ -198,7 +207,9 @@ class _Card1State extends State<Card1> {
                   Container(
                     height: 35,
                     child: ElevatedButton(
+
                       style: ButtonStyle(
+
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5.0),
@@ -209,7 +220,7 @@ class _Card1State extends State<Card1> {
                       ),
                       onPressed: () {
                       },
-                      child: Text('Book now',style: TextStyle(fontSize: deviceWidth*0.02),),
+                      child: Text('Book now',style: TextStyle(fontSize: 15),),
 
                     ),
                   ),

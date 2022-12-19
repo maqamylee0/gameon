@@ -1,13 +1,11 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:gameon/otp/views/pages/otp1.dart';
-import 'package:gameon/otp/views/pages/otp4.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'booking/views/pages/booking.dart';
 import 'booking/views/pages/booking_details.dart';
 import 'otp/views/pages/otp2.dart';
-import 'otp/views/pages/otp3.dart';
 
 void main() {
   runApp(
