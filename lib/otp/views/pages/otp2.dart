@@ -99,27 +99,27 @@ class _Otp2State extends State<Otp2> {
                             const Padding(
                               padding: EdgeInsets.all(12.0),
                               child: Text(
-                                "Hi!",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                "Enter OTP",
+                                "Enter OTP!",
                                 style: TextStyle(
                                     fontSize: 14,
-                                    color: Color(0xff7FA89C),
-                                    fontWeight: FontWeight.w400,
-                                    decoration: TextDecoration.none),
+                                    color: Color(0xff033934),
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.w600),
                                 textAlign: TextAlign.center,
                               ),
                             ),
+                            // const Padding(
+                            //   padding: EdgeInsets.all(8.0),
+                            //   child: Text(
+                            //     "Enter OTP",
+                            //     style: TextStyle(
+                            //         fontSize: 14,
+                            //         color: Color(0xff7FA89C),
+                            //         fontWeight: FontWeight.w400,
+                            //         decoration: TextDecoration.none),
+                            //     textAlign: TextAlign.center,
+                            //   ),
+                            // ),
                             const SizedBox(height: 10),
 
                             Expanded(

@@ -1,7 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../bloc/ground_bloc.dart';
+import '../bloc/ground_event.dart';
+import '../data/Ground.dart';
 
 class Booking extends StatefulWidget {
   const Booking({Key? key}) : super(key: key);
@@ -11,11 +16,22 @@ class Booking extends StatefulWidget {
 }
 
 class _BookingState extends State<Booking> {
+  // @override
+  // void initState() {
+  //   super.initState();
+  //
+  //   //Trigger the load event
+  //   context.read<GroundBloc>().add(LoadGround());
+  // }
+
 
   @override
   Widget build(BuildContext context) {
     double deviceWidth = MediaQuery.of(context).size.width;
     int  selected = 1;
+    // var groundBloc = context.watch<GroundBloc>();
+    // List<Ground> listOfGrounds = groundBloc.state.listOfGrounds;
+
 
     return SafeArea(
       child: Scaffold(
@@ -77,7 +93,10 @@ class _BookingState extends State<Booking> {
           ),
         ),
 
-       body: Container(
+       body:
+       // listOfGrounds.isEmpty
+       //     ? CircularProgressIndicator():
+       Container(
          padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
          child: Column(
            children: [
@@ -146,7 +165,7 @@ class _BookingState extends State<Booking> {
                      itemCount:5,
                      scrollDirection: Axis.vertical,
                      itemBuilder: (context,index){
-                       return Ground();
+                       return Grounds();
                      }),
                ),
              ),
@@ -159,8 +178,8 @@ class _BookingState extends State<Booking> {
   }
 }
 
-class Ground extends StatelessWidget {
-  const Ground({
+class Grounds extends StatelessWidget {
+  const Grounds({
     Key? key,
   }) : super(key: key);
 
@@ -370,7 +389,7 @@ class Ground extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                    child: Text("Wakanda Internantional Cricket Stadium",style: TextStyle(fontSize:15,fontWeight:FontWeight.w600,color: Color(0xff033934
+                    child: Text("Wakanda Internantional Cricket Stadium",style: TextStyle(fontSize:12,fontWeight:FontWeight.w600,color: Color(0xff033934
                     )),),
                   ),
                   Padding(
@@ -384,7 +403,7 @@ class Ground extends StatelessWidget {
                           allowDrawingOutsideViewBox: true,
                         ),
                         SizedBox(width: 10,),
-                        Text("Mumbai, Maharastra, India"),
+                        Text("Mumbai, Maharastra, India",style: TextStyle(fontSize: 12,color: Colors.grey),),
 
                       ],
                     ),
