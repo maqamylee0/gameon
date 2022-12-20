@@ -100,9 +100,10 @@ class _BookingState extends State<Booking> {
          padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
          child: Column(
            children: [
+             SizedBox(height: 10,),
              Container(
                // padding: EdgeInsets.all(6),
-               height: 90,
+               height: 85,
                        child: ListView.builder(
 
                            physics: NeverScrollableScrollPhysics(),
@@ -114,7 +115,7 @@ class _BookingState extends State<Booking> {
                              return Day1(index :index, selected: selected,);
                            }),
                      ),
-             // SizedBox(height: 5,),
+             SizedBox(height: 5,),
              Container(
                    padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
 
@@ -131,7 +132,7 @@ class _BookingState extends State<Booking> {
                              allowDrawingOutsideViewBox: true,
                            ) ,
                            SizedBox(width: 20,),
-                           Text("Maharastra, India"),
+                           Text("Maharastra, India",style: TextStyle(height: 0.9),),
                          ],
                        ),
 
@@ -140,7 +141,7 @@ class _BookingState extends State<Booking> {
                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                        //   crossAxisAlignment: CrossAxisAlignment.center,
                          children: [
-                           Text("Change",style: TextStyle(fontSize: 12),),
+                           Text("Change",style: TextStyle(height:0.9,fontSize: 12),),
                            Icon(Icons.arrow_forward_ios,size: 12,)
                          ],
 
@@ -156,6 +157,7 @@ class _BookingState extends State<Booking> {
 
              Expanded(
                child: SingleChildScrollView(
+                 padding: EdgeInsets.all(10),
                  child: ListView.builder(
                      physics: NeverScrollableScrollPhysics(),
                      shrinkWrap: true,
@@ -184,11 +186,21 @@ class Grounds extends StatelessWidget {
   Widget build(BuildContext context) {
    double deviceWidth = MediaQuery.of(context).size.width;
     return Container(
+        decoration: new BoxDecoration(
+          boxShadow: [
+            new BoxShadow(
+              color: Color(0xffdaeae8),
+              blurRadius: 2.0,
+            ),
+          ],
+        ),
       child: InkWell(
         onTap: (){
           Navigator.pushNamed(context, 'ground details');
         },
         child: Card(
+          elevation: 4,
+
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
             //set border radius more than 50% of height and width to make circle
@@ -226,7 +238,8 @@ class Grounds extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          padding:EdgeInsets.fromLTRB(0,10,0,0),
+
+                          padding:EdgeInsets.fromLTRB(0,20,0,0),
 
                           child: Row(
 
@@ -234,7 +247,7 @@ class Grounds extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
 
                             children: [
-                              Text("20 over",style: TextStyle(fontSize:12,fontWeight: FontWeight.w500,color: Color(0xff033934
+                              Text("20 over",style: TextStyle(height:0.8,fontSize:12,fontWeight: FontWeight.w600,color: Color(0xff033934
                           ))),
 
                             ],
@@ -244,7 +257,7 @@ class Grounds extends StatelessWidget {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
 
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               ElevatedButton(
                                 style: ButtonStyle(
@@ -261,6 +274,7 @@ class Grounds extends StatelessWidget {
                                 child: Text('10:00 am',style: TextStyle(fontSize: 10),),
 
                               ),
+                              SizedBox(width: 5,),
                               ElevatedButton(
 
                                 style: ButtonStyle(
@@ -289,6 +303,7 @@ class Grounds extends StatelessWidget {
                                 child: Text('1:00 pm',style: TextStyle(color: Colors.grey, fontSize: 10),),
 
                               ),
+                              SizedBox(width: 5,),
                               ElevatedButton(
                                 style: ButtonStyle(
                                   minimumSize: MaterialStateProperty.all(Size(40, 20)),
@@ -312,7 +327,7 @@ class Grounds extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
 
                             children: [
-                              Text("30 over",style: TextStyle(fontSize:12,fontWeight: FontWeight.w500,color: Color(0xff033934
+                              Text("30 over",style: TextStyle(height:0.8,fontSize:12,fontWeight: FontWeight.w600,color: Color(0xff033934
                               )),),
 
                             ],
@@ -415,16 +430,23 @@ class Grounds extends StatelessWidget {
                     endIndent: 20,
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),                  child: Row(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),                  child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                       children: [
-                        Text("Pitch type : Mat",style: TextStyle(color:Color(0xff033934),fontWeight: FontWeight.w500),),
+                        Row(
+                          children: [
+                            Text("Pitch type : ",style: TextStyle(color:Color(0xff033934),fontWeight: FontWeight.w500),),
+                            Text("Mat",style: TextStyle(color:Color(0xff033934),fontWeight: FontWeight.w600),),
+
+                          ],
+                        ),
                         Row(
                           children: [
                             FaIcon(FontAwesomeIcons.compass,size: 14,color:Color(0xff088F81) ,),
-                            SizedBox(width: 20,),
-                            Text("Navigate",style: TextStyle(color: Color(0xff088F81),fontWeight: FontWeight.w500),)
+                            SizedBox(width: 10,),
+                            Text("Navigate",style: TextStyle(color: Color(0xff088F81),fontWeight: FontWeight.w500),),
+                            SizedBox(width: 30,)
                           ],
                         )
                       ],
@@ -474,16 +496,16 @@ class _Day1State extends State<Day1> {
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: selected == widget.index ? newBack:background,
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(14),
 
         ),
         height: 40,
         width:67,
         child: Column(
           children: [
-            Text("$month",style: TextStyle(color:selected == widget.index ? background:Colors.black, fontSize: 12),),
-            Text("$date",style: TextStyle(color:selected == widget.index ? background:Colors.black,fontWeight:FontWeight.w600,fontSize: 12),),
-            Text("$day",style: TextStyle(color:selected == widget.index ? background:Colors.black,fontSize: 12),)
+            Text("$month",style: TextStyle(color:selected == widget.index ? background:Color(0xff033934), fontSize: 12),),
+            Text("$date",style: TextStyle(color:selected == widget.index ? background:Color(0xff033934),fontWeight:FontWeight.w600,fontSize: 12),),
+            Text("$day",style: TextStyle(color:selected == widget.index ? background:Color(0xff033934),fontSize: 12),)
           ],
         ),
       ),
