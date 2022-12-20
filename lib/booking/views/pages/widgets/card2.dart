@@ -16,6 +16,12 @@ class _Card2State extends State<Card2> {
     bool value = false;
     double deviceWidth = MediaQuery.of(context).size.width;
     return Card(
+        elevation: 4,
+
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          //set border radius more than 50% of height and width to make circle
+        ),
       child:
       Column(
 
@@ -25,12 +31,12 @@ class _Card2State extends State<Card2> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("For 30 Overs",style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xff033934)),),
+                Text("For 30 Overs",style: TextStyle(fontSize:12,fontWeight: FontWeight.w600,color: Color(0xff033934)),),
                 ElevatedButton(
 
                   style: ButtonStyle(
                     minimumSize: MaterialStateProperty.all(Size(40, 20)),
-                    padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
+                    padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(12, 5, 12, 5)),
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -64,6 +70,7 @@ class _Card2State extends State<Card2> {
               Container(
                 padding: EdgeInsets.all(10),
                 child: Column(
+
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
@@ -74,7 +81,9 @@ class _Card2State extends State<Card2> {
                     SizedBox(height: 10,),
                     ElevatedButton(
                       style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all(Size(40, 20)),
+    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+
+    minimumSize: MaterialStateProperty.all(Size(40, 20)),
                         padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
                         // backgroundColor: MaterialStateProperty.all<Color>(Color(0xffF4F4F4)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -82,8 +91,8 @@ class _Card2State extends State<Card2> {
                               borderRadius: BorderRadius.circular(5.0),
                             )
                         ),
-                        shadowColor:MaterialStateProperty.all<Color>(Colors.grey) ,
-                        elevation: MaterialStateProperty.all<double>(20),
+                        // shadowColor:MaterialStateProperty.all<Color>(Colors.grey) ,
+                        // elevation: MaterialStateProperty.all<double>(20),
                       ),
                       onPressed: () {
                       },
@@ -108,7 +117,9 @@ class _Card2State extends State<Card2> {
 
                     ElevatedButton(
                       style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all(Size(40, 20)),
+    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+
+    minimumSize: MaterialStateProperty.all(Size(40, 20)),
                         padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
                         // backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(114, 202, 193, 0.4)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -132,12 +143,13 @@ class _Card2State extends State<Card2> {
             ],
           ),
           Divider(
+            height: 1,
             color: Colors.grey,
             indent: 10,
             endIndent: 10,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
             child: Row(
               children: [
                 Row(

@@ -17,20 +17,26 @@ class _Card1State extends State<Card1> {
     bool value = false;
     double deviceWidth = MediaQuery.of(context).size.width;
     return Card(
+        elevation: 4,
+
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          //set border radius more than 50% of height and width to make circle
+        ),
         child: Column(
 
           children: [
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("For 20 Overs",style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xff033934)),),
+                  Text("For 20 Overs",style: TextStyle(fontSize:12,height:0.9,fontWeight: FontWeight.w600,color: Color(0xff033934)),),
                   ElevatedButton(
 
                     style: ButtonStyle(
                       minimumSize: MaterialStateProperty.all(Size(40, 20)),
-                      padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
+                      padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(15, 5, 15, 5)),
                       backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -67,29 +73,46 @@ class _Card1State extends State<Card1> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
 
-                      Text("Team 1:",style: TextStyle(color:Color(0xff7FA89C),fontWeight: FontWeight.w400),),
+                      Text("Team 1:",style: TextStyle(fontSize:11,color:Color(0xff7FA89C),fontWeight: FontWeight.w400),),
 
 
-                      Text("Mumbai Indians",style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xff033934)),),
+                      Text("Mumbai Indians",style: TextStyle(fontSize:11,fontWeight: FontWeight.w600,color: Color(0xff033934)),),
                       SizedBox(height: 10,),
-                      ElevatedButton(
-                        style: ButtonStyle(
-                          minimumSize: MaterialStateProperty.all(Size(40, 20)),
-                          padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
-                          backgroundColor: MaterialStateProperty.all<Color>(Color(0xffF4F4F4)),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5.0),
-                              )
-                          ),
-                          // shadowColor:MaterialStateProperty.all<Color>(Colors.grey) ,
-                          // elevation: MaterialStateProperty.all<double>(20),
-                        ),
-                        onPressed: () {
-                        },
-                        child: Text('Booked',style: TextStyle(color:Color(0xff088F81),fontSize: 10),),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                        // height: 30,
+                        // width: 30,
 
-                      ),
+                        decoration: BoxDecoration(
+
+                          color: Color(0xffe6e8e8),
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
+                        child: Row(
+                          children: [
+                            Text("Booked",style: TextStyle(color:Color(0xff033934),fontSize: 10),),
+
+                          ],
+                        ),
+                      )
+                      // ElevatedButton(
+                      //   style: ButtonStyle(
+                      //     minimumSize: MaterialStateProperty.all(Size(40, 20)),
+                      //     padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
+                      //     backgroundColor: MaterialStateProperty.all<Color>(Color(0xffF4F4F4)),
+                      //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      //         RoundedRectangleBorder(
+                      //           borderRadius: BorderRadius.circular(5.0),
+                      //         )
+                      //     ),
+                      //     // shadowColor:MaterialStateProperty.all<Color>(Colors.grey) ,
+                      //     // elevation: MaterialStateProperty.all<double>(20),
+                      //   ),
+                      //   onPressed: () {
+                      //   },
+                      //   child: Text('Booked',style: TextStyle(color:Color(0xff088F81),fontSize: 10),),
+                      //
+                      // ),
                     ],
                   ),
                 ),
@@ -100,32 +123,51 @@ class _Card1State extends State<Card1> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
 
-                      Text("Team 2:",style: TextStyle(color:Color(0xff7FA89C),fontWeight: FontWeight.w400),),
+                      Text("Team 2:",style: TextStyle(fontSize:11,color:Color(0xff7FA89C),fontWeight: FontWeight.w400),),
 
 
 
-                      Text("Available",style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xff033934)),),
+                      Text("Available",style: TextStyle(fontSize:11,fontWeight: FontWeight.w600,color: Color(0xff033934)),),
                       SizedBox(height: 10,),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                        // height: 30,
+                        // width: 30,
 
-                      ElevatedButton(
-                        style: ButtonStyle(
-                          minimumSize: MaterialStateProperty.all(Size(40, 20)),
-                          padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
-                          backgroundColor: MaterialStateProperty.all<Color>(Color(
-                              0x14088F81)),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5.0),
-                              )
-                          ),
-                          // shadowColor:MaterialStateProperty.all<Color>(Colors.grey) ,
-                          // elevation: MaterialStateProperty.all<double>(20),
+                        decoration: BoxDecoration(
+
+                          color:Color.fromRGBO(114, 202, 193, 0.4) ,
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
                         ),
-                        onPressed: () {
-                        },
-                        child: Text('Available',style: TextStyle(color:Color(0xff088F81),fontSize: 10),),
+                        child: Row(
+                          children: [
+                            Text("Available",style: TextStyle(color:Color(0xff088F81),fontSize: 10),),
 
-                      ),
+                          ],
+                        ),
+                      )
+    //                   ElevatedButton(
+    //                     style: ButtonStyle(
+    //
+    //                       overlayColor: MaterialStateProperty.all<Color>(Color(     0x14088F81
+    // )) ,
+    //                       minimumSize: MaterialStateProperty.all(Size(40, 20)),
+    //                       padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
+    //                       backgroundColor: MaterialStateProperty.all<Color>(Color(     0x14088F81
+    //                       )),
+    //                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+    //                           RoundedRectangleBorder(
+    //                             borderRadius: BorderRadius.circular(5.0),
+    //                           )
+    //                       ),
+    //                       // shadowColor:MaterialStateProperty.all<Color>(Colors.grey) ,
+    //                       // elevation: MaterialStateProperty.all<double>(20),
+    //                     ),
+    //                     onPressed: () {
+    //                     },
+    //                     child: Text('Available',style: TextStyle(color:Color(0xff088F81),fontSize: 10),),
+    //
+    //                   ),
                     ],
                   ),
                 ),
@@ -138,8 +180,9 @@ class _Card1State extends State<Card1> {
               endIndent: 10,
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+              padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
 
                 children: [
                   Row(
@@ -192,7 +235,7 @@ class _Card1State extends State<Card1> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

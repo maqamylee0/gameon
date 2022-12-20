@@ -132,7 +132,7 @@ class _BookingState extends State<Booking> {
                              allowDrawingOutsideViewBox: true,
                            ) ,
                            SizedBox(width: 20,),
-                           Text("Maharastra, India",style: TextStyle(height: 0.9),),
+                           Text("Maharastra, India",style: TextStyle(height: 0.6),),
                          ],
                        ),
 
@@ -141,7 +141,7 @@ class _BookingState extends State<Booking> {
                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                        //   crossAxisAlignment: CrossAxisAlignment.center,
                          children: [
-                           Text("Change",style: TextStyle(height:0.9,fontSize: 12),),
+                           Text("Change",style: TextStyle(height:0.6,fontSize: 12),),
                            Icon(Icons.arrow_forward_ios,size: 12,)
                          ],
 
@@ -262,7 +262,7 @@ class Grounds extends StatelessWidget {
                               ElevatedButton(
                                 style: ButtonStyle(
                                   minimumSize: MaterialStateProperty.all(Size(40, 20)),
-                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),
+                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(11, 5, 11, 5)),
                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(5.0),
@@ -279,7 +279,7 @@ class Grounds extends StatelessWidget {
 
                                 style: ButtonStyle(
                                   minimumSize: MaterialStateProperty.all(Size(40, 20)),
-                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(11, 5, 11, 5)),                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
 
@@ -307,7 +307,7 @@ class Grounds extends StatelessWidget {
                               ElevatedButton(
                                 style: ButtonStyle(
                                   minimumSize: MaterialStateProperty.all(Size(40, 20)),
-                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(11, 5, 11, 5)),                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(5.0),
                                       )
@@ -341,7 +341,7 @@ class Grounds extends StatelessWidget {
                               ElevatedButton(
                                 style: ButtonStyle(
                                   minimumSize: MaterialStateProperty.all(Size(40, 20)),
-                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(11, 5, 11, 5)),                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
@@ -367,7 +367,7 @@ class Grounds extends StatelessWidget {
                                 style: ButtonStyle(
 
                                   minimumSize: MaterialStateProperty.all(Size(40, 20)),
-                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(10, 5, 10, 5)),                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                  padding:  MaterialStateProperty.all(EdgeInsets.fromLTRB(11, 5, 11, 5)),                                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                       RoundedRectangleBorder(

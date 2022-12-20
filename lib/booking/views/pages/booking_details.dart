@@ -18,7 +18,7 @@ class _GroundDetailsState extends State<GroundDetails> {
     double deviceWidth = MediaQuery.of(context).size.width;
     double deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color(0xfff4f9f9),
+      // backgroundColor: Color(0xfff4f9f9),
 
       appBar: PreferredSize(
 
@@ -60,7 +60,7 @@ class _GroundDetailsState extends State<GroundDetails> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(15),
           child: Column(
             children: [
               // SizedBox(height: 20,),
@@ -77,15 +77,15 @@ class _GroundDetailsState extends State<GroundDetails> {
                       allowDrawingOutsideViewBox: true,
                     ) ,
                     SizedBox(width: 20,),
-                    Text("Sunday ,21 June 2021",style: TextStyle(fontSize: 14,color: Color(0xff033934)),)
+                    Text("Sunday ,21 June 2021",style: TextStyle(fontWeight:FontWeight.w600,fontSize: 14,color: Color(0xff033934)),)
                   ],
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(10),
+                margin: EdgeInsets.fromLTRB(30, 10, 30, 0),
                 decoration: BoxDecoration(
                     image: DecorationImage(image: AssetImage("assets/images/pitch.png"), fit: BoxFit.cover),
-                    borderRadius: BorderRadius.circular(20)
+                    borderRadius: BorderRadius.circular(15)
                 ),
                 height: deviceHeight*0.2,
                 width: deviceWidth,
@@ -96,8 +96,8 @@ class _GroundDetailsState extends State<GroundDetails> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-                      child: Text("Wakanda Internantional Cricket Stadium",style: TextStyle(fontSize:16,fontWeight:FontWeight.w600,color: Color(0xff033934
+                      padding: const EdgeInsets.fromLTRB(5, 10, 5, 5),
+                      child: Text("Wakanda Internantional Cricket Stadium",style: TextStyle(fontSize:12,fontWeight:FontWeight.w600,color: Color(0xff033934
                       )),),
                     ),
 
@@ -118,11 +118,18 @@ class _GroundDetailsState extends State<GroundDetails> {
                               height: 13.0,
                               width: 14.0,
                               allowDrawingOutsideViewBox: true,
-                            )      ,                    SizedBox(width: 20,),
-                            Text("Navigate",style: TextStyle(color: Color(0xff088F81),decoration: TextDecoration.underline,fontWeight: FontWeight.w500),)
+                            )      ,
+                            SizedBox(width: 10,),
+                            Text("Navigate",style: TextStyle(color: Color(0xff088F81),decoration: TextDecoration.underline,fontWeight: FontWeight.w500,fontSize: 12),)
                           ],
                         ),
-                        Text("Pitch type : Mat",style: TextStyle(color:Color(0xff033934),fontWeight: FontWeight.w500),),
+                        Row(
+                          children: [
+                            Text("Pitch type :",style: TextStyle(fontSize:12,color:Color(0xff033934),fontWeight: FontWeight.w500),),
+                            Text(" Mat",style: TextStyle(fontSize:12,color:Color(0xff033934),fontWeight: FontWeight.w600),),
+
+                          ],
+                        )
 
                       ],
                     ),
@@ -136,8 +143,8 @@ class _GroundDetailsState extends State<GroundDetails> {
                           children: [
                             Container(
                               padding: EdgeInsets.all(5),
-                              height: 30,
-                              width: 30,
+                              height: 25,
+                              width: 25,
 
                               decoration: BoxDecoration(
 
@@ -155,8 +162,8 @@ class _GroundDetailsState extends State<GroundDetails> {
                             SizedBox(width: 10,),
                             Container(
                               padding: EdgeInsets.all(5),
-                              height: 30,
-                              width: 30,
+                              height: 25,
+                              width: 25,
 
                               decoration: BoxDecoration(
 
@@ -175,14 +182,14 @@ class _GroundDetailsState extends State<GroundDetails> {
                         ),
 
                         Container(
-                          padding: EdgeInsets.all(5),
+                          padding: EdgeInsets.fromLTRB(10, 3, 10, 3),
                           // height: 30,
                           // width: 30,
 
                           decoration: BoxDecoration(
 
                             color: Color.fromRGBO(114, 202, 193, 0.4),
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
                           ),
                           child: Row(
                             children: [
@@ -200,8 +207,26 @@ class _GroundDetailsState extends State<GroundDetails> {
                   ],
                 ),
               ),
-              Card1(),
-              Card2()
+              Container(
+                  decoration: new BoxDecoration(
+                    boxShadow: [
+                      new BoxShadow(
+                        color: Color(0xffdaeae8),
+                        blurRadius: 2.0,
+                      ),
+                    ],
+                  ),
+                  child: Card1()),
+              Container(
+                  decoration: new BoxDecoration(
+                    boxShadow: [
+                      new BoxShadow(
+                        color: Color(0xffdaeae8),
+                        blurRadius: 2.0,
+                      ),
+                    ],
+                  ),
+                  child: Card2())
 
             ],
           ),
