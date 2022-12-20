@@ -97,12 +97,12 @@ class _BookingState extends State<Booking> {
        // listOfGrounds.isEmpty
        //     ? CircularProgressIndicator():
        Container(
-         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+         padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
          child: Column(
            children: [
              Container(
                // padding: EdgeInsets.all(6),
-               height: 80,
+               height: 90,
                        child: ListView.builder(
 
                            physics: NeverScrollableScrollPhysics(),
@@ -114,7 +114,7 @@ class _BookingState extends State<Booking> {
                              return Day1(index :index, selected: selected,);
                            }),
                      ),
-             SizedBox(height: 10,),
+             // SizedBox(height: 5,),
              Container(
                    padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
 
@@ -189,6 +189,10 @@ class Grounds extends StatelessWidget {
           Navigator.pushNamed(context, 'ground details');
         },
         child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            //set border radius more than 50% of height and width to make circle
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -470,7 +474,7 @@ class _Day1State extends State<Day1> {
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: selected == widget.index ? newBack:background,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(15),
 
         ),
         height: 40,
