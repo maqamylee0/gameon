@@ -35,7 +35,7 @@ class _BookingState extends State<Booking> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xfff4f9f9),
+        // backgroundColor: Color(0xfff4f9f9),
         //const Color.fromRGBO(8, 143, 129, 0.08),
         appBar: PreferredSize(
 
@@ -45,7 +45,7 @@ class _BookingState extends State<Booking> {
             children: [
               Container(
                 color: Color(0xff088F81),
-                height: 100,),
+                height: 70,),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 60, 0, 5),
                 child: AppBar(
@@ -101,12 +101,12 @@ class _BookingState extends State<Booking> {
          child: Column(
            children: [
              Container(
-               padding: EdgeInsets.all(6),
-               height: 100,
+               // padding: EdgeInsets.all(6),
+               height: 80,
                        child: ListView.builder(
 
                            physics: NeverScrollableScrollPhysics(),
-                           shrinkWrap: true,
+                           // shrinkWrap: true,
                            itemCount:6,
                            scrollDirection: Axis.horizontal,
                            itemBuilder: (context,index){
@@ -115,13 +115,7 @@ class _BookingState extends State<Booking> {
                            }),
                      ),
              SizedBox(height: 10,),
-             Card(
-               child: GestureDetector(
-                 onTap: (){
-                   Navigator.pushNamed(context, 'ground details');
-
-                 },
-                 child: Container(
+             Container(
                    padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
 
                    child: Row(
@@ -155,8 +149,11 @@ class _BookingState extends State<Booking> {
                      ]
                    ),
                  ),
-               ),
+             Divider(
+               indent: 20,
+                 endIndent: 20,
              ),
+
              Expanded(
                child: SingleChildScrollView(
                  child: ListView.builder(
@@ -457,6 +454,7 @@ class _Day1State extends State<Day1> {
   @override
   Widget build(BuildContext context) {
     Color background = Colors.white;
+
     int selected = 1;
     Color newBack = Color(0xff088F81);
     String month ="Jan";
@@ -469,19 +467,19 @@ class _Day1State extends State<Day1> {
        });
       },
       child: Container(
-        margin: EdgeInsets.fromLTRB(2, 0, 2, 0),
+        padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: selected == widget.index ? newBack:background,
-            borderRadius: BorderRadius.circular(18),
+            borderRadius: BorderRadius.circular(20),
 
         ),
-        height: 50,
-        width: 50,
+        height: 40,
+        width:67,
         child: Column(
           children: [
-            Text("$month",style: TextStyle(fontSize: 14),),
-            Text("$date",style: TextStyle(fontSize: 14),),
-            Text("$day",style: TextStyle(fontSize: 14),)
+            Text("$month",style: TextStyle(color:selected == widget.index ? background:Colors.black, fontSize: 12),),
+            Text("$date",style: TextStyle(color:selected == widget.index ? background:Colors.black,fontWeight:FontWeight.w600,fontSize: 12),),
+            Text("$day",style: TextStyle(color:selected == widget.index ? background:Colors.black,fontSize: 12),)
           ],
         ),
       ),

@@ -11,8 +11,8 @@ import 'otp/views/pages/otp2.dart';
 
 void main() {
   runApp(
-      MyApp()
-    // DevicePreview(builder: (BuildContext context)=> MyApp())
+      // MyApp()
+    DevicePreview(builder: (BuildContext context)=> MyApp())
   );
 
 }
